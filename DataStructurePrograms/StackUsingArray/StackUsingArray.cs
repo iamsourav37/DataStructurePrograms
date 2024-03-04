@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataStructurePrograms
+namespace DataStructurePrograms.StackUsingArray
 {
 
     public interface IStack
@@ -25,71 +25,71 @@ namespace DataStructurePrograms
 
         public StackUsingArray(int size)
         {
-            this._size = size;
-            this._top = -1;
-            this._stackArray = new int[size];
+            _size = size;
+            _top = -1;
+            _stackArray = new int[size];
         }
 
         public bool IsUnderflow()
         {
-            return this._top == -1;
+            return _top == -1;
         }
 
         public bool IsOverflow()
         {
-            return this._top == this._size - 1;
+            return _top == _size - 1;
         }
 
 
         public void Pop()
         {
-            if (this.IsUnderflow())
+            if (IsUnderflow())
             {
                 Console.WriteLine("Stack is underflow !!!");
                 return;
             }
 
-            int popedElement = this._stackArray[this._top];
-            this._top--;
+            int popedElement = _stackArray[_top];
+            _top--;
             Console.WriteLine($"Pop element: {popedElement}");
 
         }
 
         public void Push(int data)
         {
-            if (this.IsOverflow())
+            if (IsOverflow())
             {
                 Console.WriteLine("Stack is overflow !!!");
                 return;
             }
 
-            this._top++;
-            this._stackArray[this._top] = data;
+            _top++;
+            _stackArray[_top] = data;
             Console.WriteLine($"{data} is pushed.");
         }
 
         public int? Peek()
         {
-            if (this.IsUnderflow())
+            if (IsUnderflow())
             {
                 Console.WriteLine("Stack is underflow");
                 return null;
             }
 
-            return this._stackArray[this._top];
+            return _stackArray[_top];
         }
 
         public void Show()
         {
-            if (this.IsUnderflow())
+            if (IsUnderflow())
             {
                 Console.WriteLine("Stack is underflow");
             }
 
             Console.WriteLine("Stack's elements are: ");
-            for (int i = this._top; i >= 0; i--)
+            for (int i = _top; i >= 0; i--)
             {
-                Console.WriteLine(this._stackArray[i]);
+                Console.WriteLine(_stackArray[i]);
             }
 
 
