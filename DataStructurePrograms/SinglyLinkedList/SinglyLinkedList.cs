@@ -8,9 +8,10 @@ namespace DataStructurePrograms.SinglyLinkedList
 {
 	internal class SinglyLinkedList : ISinglyLinkedList
 	{
-		Node? head;
+		Node? _head;
 		public SinglyLinkedList()
 		{
+			_head = null;
 		}
 		public int CountNodes()
 		{
@@ -19,7 +20,8 @@ namespace DataStructurePrograms.SinglyLinkedList
 
 		public void InsertFirst(int data)
 		{
-			throw new NotImplementedException();
+			_head = new Node() { Data = data, Next = _head };
+			Console.WriteLine($"InsertFirst(), {data} is Inserted in the First Position.");
 		}
 
 		public void InsertLast(int data)
@@ -39,7 +41,26 @@ namespace DataStructurePrograms.SinglyLinkedList
 
 		public void ShowList()
 		{
-			throw new NotImplementedException();
+
+			if (_head is null)
+			{
+				Console.WriteLine("List is empty !!!");
+				return;
+			}
+
+			Console.WriteLine("List elements are: ");
+			var temp = _head;
+
+			StringBuilder listElements = new();
+
+			while (temp is not null)
+			{
+				listElements.Append($"{temp.Data}->");
+				temp = temp.Next;
+			}
+			listElements.Append("NULL");
+			Console.WriteLine(listElements);
+			Console.WriteLine();
 		}
 	}
 }
