@@ -1,5 +1,6 @@
 ﻿using DataStructurePrograms.SinglyLinkedList;
 using DataStructurePrograms.StackUsingArray;
+using DataStructurePrograms.StackUsingLinkedList;
 
 namespace DataStructurePrograms
 {
@@ -12,10 +13,12 @@ namespace DataStructurePrograms
 			//StackRunner stackRunner = new StackRunner();
 			//stackRunner.Run();
 
-			new SinglyLinkedListRunner().Run();
+			//new SinglyLinkedListRunner().Run();
+
+			new StackUsingLinkedListRunner().Run();
 
 
 
-		}
+        }
 	}
 }
