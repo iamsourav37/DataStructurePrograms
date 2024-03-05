@@ -12,11 +12,21 @@ namespace DataStructurePrograms.SinglyLinkedList
 		{
 			SinglyLinkedList singlyLinkedList = new();
 
+
+			//singlyLinkedList.ShowList();
+
 			singlyLinkedList.InsertFirst(24);
-			singlyLinkedList.InsertFirst(29);
-			singlyLinkedList.InsertFirst(3);
-			singlyLinkedList.InsertFirst(98);
-			singlyLinkedList.ShowList();
+			singlyLinkedList.InsertLast(29);
+			singlyLinkedList.InsertLast(80);
+			singlyLinkedList.InsertFirst(21);
+
+			//singlyLinkedList.ShowList();
+
+			singlyLinkedList.RemoveLast();
+			singlyLinkedList.RemoveFirst();
+
+			//Console.WriteLine($"Total Node Count: {singlyLinkedList.CountNodes()} ");
+            singlyLinkedList.ShowList();
 		}
 	}
 }
