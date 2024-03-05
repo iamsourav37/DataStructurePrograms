@@ -68,7 +68,7 @@ namespace DataStructurePrograms.SinglyLinkedList
 
 		public void RemoveLast()
 		{
-			
+
 			if (_head is null)
 			{
 				Console.WriteLine("List is empty !!!");
@@ -76,10 +76,10 @@ namespace DataStructurePrograms.SinglyLinkedList
 			}
 			else if (_head.Next is null)
 			{
-                Console.WriteLine($"RemoveLast(), Removed Element: {_head.Data}");
+				Console.WriteLine($"RemoveLast(), Removed Element: {_head.Data}");
 				_head = null;
 				return;
-            }
+			}
 
 			Node temp = _head;
 			Node prevNode = null;
